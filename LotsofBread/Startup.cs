@@ -45,15 +45,27 @@ namespace LotsofBread
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseMvc(routes => {
-                //creates new route for product's page number via a list
                 routes.MapRoute(
-                   name: "pagination",
-                   template: "Products/Page{page}", //will create url saying "Products/Page1"
-                   defaults: new { Controller = "Product", action = "List" });
+    name: null,
+    template: "{category}/Page{page:int}",
+    defaults: new { controller = "Product", action = "List" }
+);
+                routes.MapRoute(
+                    name: null,
+                    template: "Page{page:int}",
+                    defaults: new { controller = "Product", action = "List", page = 1 }
+                );
+                routes.MapRoute(
+                    name: null,
+                    template: "{category}",
+                    defaults: new { controller = "Product", action = "List", page = 1 }
+                );
+                routes.MapRoute(
+                    name: null,
+                    template: "",
+                    defaults: new { controller = "Product", action = "List", page = 1 });
 
-                routes.MapRoute(
-                name: "default",
-                template: "{controller=Product}/{action=List}/{id?}");
+                routes.MapRoute(name: null, template: "{controller}/{action}/{id?}");
             });
         }
     }
