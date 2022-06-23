@@ -34,7 +34,11 @@ namespace LotsofBread
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IProductRepository, EFProductRepository>();
-            services.AddMvc(options => options.EnableEndpointRouting = false);
+
+            services.AddMvc(options => options.EnableEndpointRouting = false)
+                .AddNewtonsoftJson();
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
 
@@ -44,12 +48,14 @@ namespace LotsofBread
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseSession();
+
             app.UseMvc(routes => {
                 routes.MapRoute(
-    name: null,
-    template: "{category}/Page{page:int}",
-    defaults: new { controller = "Product", action = "List" }
-);
+                    name: null,
+                    template: "{category}/Page{page:int}",
+                    defaults: new { controller = "Product", action = "List" }
+                );
                 routes.MapRoute(
                     name: null,
                     template: "Page{page:int}",
