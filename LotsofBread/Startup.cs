@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using LotsofBread.Models;
 using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore; 
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace LotsofBread
 {
@@ -39,6 +40,10 @@ namespace LotsofBread
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IOrderRepository, EFOrderRepository>();
 
+            services.AddIdentity<AppUser, IdentityRole<Guid>>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
             services.AddMvc(options => options.EnableEndpointRouting = false)
                 .AddNewtonsoftJson();
             services.AddMemoryCache();
@@ -52,6 +57,7 @@ namespace LotsofBread
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseSession();
 
             app.UseMvc(routes => {
