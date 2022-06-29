@@ -1,11 +1,23 @@
 ﻿@model ProductsListViewModel
 
-@foreach (var p in Model.Products) //for each product list in the ProductListViewModel
-{
-    @Html.Partial("ProductSummary", p)
-}
 
-<div page-model="@Model.PagingInfo" page-action="List" page-classes-enabled="true"
-     page-class="btn" page-class-normal="btn-default"
-     page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory" class="btn-group float-right"> 
+
+
+@*<div class="card-deck">*@
+<div class="row">
+    @foreach (var p in Model.Products) //for each product list in the ProductListViewModel
+    {
+
+        @Html.Partial("ProductSummary", p)
+    }
 </div>
+
+<!--Pages on bottom of screen-->
+<div class="container" style="display:inline-block; margin-bottom:20px;">
+    <div page-model="@Model.PagingInfo" page-action="List" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-default"
+     page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory" class="btn-group float-right">
+    </div>
+</div>
+
+

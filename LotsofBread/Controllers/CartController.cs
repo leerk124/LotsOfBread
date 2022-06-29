@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using LotsofBread.Models;
 using LotsofBread.Models.ViewModels;
 
-namespace SportsStore.Controllers
+namespace LotsofBread.Controllers
 {
     public class CartController : Controller
     {

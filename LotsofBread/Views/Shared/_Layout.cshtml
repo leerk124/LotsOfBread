@@ -32,7 +32,7 @@
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="account.html">Account</a>
+                    @*<a asp-action="BusinessInfo" asp-controller="home">Business Information</a>*@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="signin.html">Sign in</a>
@@ -53,7 +53,7 @@
     <!--Top Section-->
     <div class="container-fluid">
         <img class="banner-image" src="\images\breadBanner.png">
-        @await Component.InvokeAsync("NavigationMenu")
+       @* @await Component.InvokeAsync("NavigationMenu")*@  <!--Need to fix format of categories-->
     </div>
 
     <!--Footer For Contacts?-->

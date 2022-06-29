@@ -11,7 +11,7 @@ namespace LotsofBread.Controllers
     public class ProductController : Controller
     {
         private IProductRepository repository;
-        public int PageSize = 4;
+        public int PageSize = 6; //number of products shown on each page
         public ProductController(IProductRepository repo)
         {
             repository = repo;
