@@ -5,7 +5,7 @@
     <title>Lots of Bread</title>
 
     <!--Title Icon-->
-    <link rel="icon" href="images/bakery.png" type="image/x-icon">
+    <link rel="icon" href="images/lobLogo6.png" type="image/x-icon">
 
     <!--Links to BS, CSS, & Google Fonts-->
     <meta name="description" content="">
@@ -19,7 +19,6 @@
 </head>
 
 <body>
-
     <!--Navigation Bar-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="index.html"><img src="\images\lobLogo6.png" alt="logo" width="55" height="50"></a>
@@ -37,6 +36,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="signin.html">Sign in</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Products
+                        </a>
+                    <!--Calling for NavigationMenu Default.cshtml (categories)-->
+                        @await Component.InvokeAsync("NavigationMenu") 
+                    </li>
+
                     <!--Calling for CartSummary Default.cshtml-->
                     @await Component.InvokeAsync("CartSummary")
                 </ul>
@@ -51,17 +58,11 @@
 
     <!--Top Section-->
     <div class="container-fluid">
-        <img class="banner-image" src="\images\homeBanner.png">
+        <img class="banner-image" src="\images\banner1.png">
         <div class="blockTopLeft">
 
         </div>
-        <div class="top-left">
-            <p class="bannerText">
-                Testing!
-            </p>
-        </div>
-       @* @await Component.InvokeAsync("NavigationMenu")*@  <!--Need to fix format of categories-->
-        </div>
+    </div>
     <!--Footer For Contacts?-->
     <!--JS for Bootstrap (Make JS folder in root??)-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

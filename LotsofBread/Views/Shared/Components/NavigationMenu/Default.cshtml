@@ -1,21 +1,23 @@
 ﻿@model IEnumerable<string>
 
 
-<a class="btn btn-outline-dark btn-block m-2"
-   asp-action="List"
-   asp-controller="Product"
-   asp-route-category="">
-    All Products
-</a>
-
-@foreach (string category in Model)
-{
-    <a class="btn btn-block m-2
-        @(category == ViewBag.SelectedCategory ? "btn-primary": "btn-outline-dark")"
+<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item
        asp-action="List"
        asp-controller="Product"
-       asp-route-category="@category"
-       asp-route-page="1">
-        @category
+       asp-route-category="">
+        All
     </a>
-} 
+    @foreach (string category in Model)
+    {
+        <a class="dropdown-item
+            @(category == ViewBag.SelectedCategory)"
+           asp-action="List"
+           asp-controller="Product"
+           asp-route-category="@category"
+           asp-route-page="1">
+            @category
+        </a>
+    }
+</div>
+
