@@ -2,7 +2,7 @@
     padding-top:30px;
     width: 100%;
     display: block;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 /*Get rid padding that comes w/ container-fluid*/
@@ -13,15 +13,3 @@
     margin-left: auto;
 }
 
-/*For banner*/
-.top-left {
-    position: absolute;
-    top: 100px;
-   /* left: 16px;*/
-}
-
-.bannerText {
-    color: white;
-    font-family: 'Baloo 2', cursive;
-    font-size:50px;
-}
