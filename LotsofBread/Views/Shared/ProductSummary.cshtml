@@ -1,34 +1,33 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Product
 
-@model Product
-<div class="card m-3 rounded">
-    <div class="card-block m-2">
-        <div class="card-body">
-            <h3 class="card-title">
-                <strong>@Model.Name</strong>
-            </h3>
 
-            <p class="card-text lead">
-                @Model.Description
-            </p>
+    <!--Already in a row in List.cshtml; mt/mb = margin top/bottom-->
+    <div class="col-lg-4 d-flex align-items-stretch mt-4 mb-4"> 
+        <div class="card rounded mx-auto" style="width: 30rem;">
+            <div class="card-block">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <strong>@Model.Name</strong>
+                    </h3>
 
-            <span class="float-left bg-success text-white rounded m-2 p-1">
-                @Model.Price.ToString("c")
-            </span>
+                    <p class="card-text lead">
+                        @Model.Description
+                    </p>
 
-            <form id="@Model.ProductID" asp-action="AddToCart"
-                  asp-controller="Cart" method="post" class="float-right m-2 p-1">
-                <input type="hidden" asp-for="ProductID" />
-                <input type="hidden" name="returnUrl"
-                       value="@ViewContext.HttpContext.Request.PathAndQuery()" />
-                <button type="submit" class="btn btn-info btn-sm float-right">
-                    Add To Cart
-                </button>
-            </form>
+                    <span class="float-left bg-success text-white rounded m-2 p-1">
+                        @Model.Price.ToString("c")
+                    </span>
+
+                    <form id="@Model.ProductID" asp-action="AddToCart"
+                          asp-controller="Cart" method="post" class="float-right m-2 p-1">
+                        <input type="hidden" asp-for="ProductID" />
+                        <input type="hidden" name="returnUrl"
+                               value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                        <button type="submit" class="btn btn-info btn-sm float-right">
+                            Add To Cart
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-</div> 
