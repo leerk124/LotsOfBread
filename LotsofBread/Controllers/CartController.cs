@@ -11,7 +11,7 @@ namespace LotsofBread.Controllers
 
         private Cart cart;
 
-        public CartController(IProductRepository repo, Cart cartService)
+        public CartController(IProductRepository repo, Cart cartService) //constructor to set variables
         {
             repository = repo;
             cart = cartService;

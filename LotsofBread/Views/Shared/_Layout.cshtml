@@ -29,7 +29,8 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+
                     </li>
                     <!--<li class="nav-item">-->
                         @*<a asp-action="BusinessInfo" asp-controller="home">Business Information</a>*@
@@ -38,7 +39,7 @@
                         <a class="nav-link" href="signin.html">Sign in</a>
                     </li>-->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                             Products
                         </a>
                     <!--Calling for NavigationMenu Default.cshtml (categories)-->
@@ -60,9 +61,6 @@
     <!--Top Section-->
     <div class="container-fluid">
         <img class="banner-image" src="\images\banner1.png">
-        <div class="blockTopLeft">
-
-        </div>
     </div>
     <!--Footer For Contacts?-->
     <!--JS for Bootstrap (Make JS folder in root??)-->
