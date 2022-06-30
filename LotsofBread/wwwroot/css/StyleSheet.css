@@ -13,18 +13,8 @@
     margin-left: auto;
 }
 
-.testing {
+.category-heading {
     text-align: center;
-    /*    font-family: 'Suez One', serif;*/
-    /*color: #4a3728;*/
     color: #565656;
 }
 
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
