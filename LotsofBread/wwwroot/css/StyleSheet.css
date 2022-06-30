@@ -18,3 +18,27 @@
     color: #565656;
 }
 
+
+.home-heading {
+    padding-left:80px;
+    padding-right:80px;
+    text-align: center;
+    color: #565656;
+}
+
+
+.home-images{
+    display:inline-block;
+    margin: auto auto;
+}
+
+
+/*Footer*/
+.div-footer {
+    margin: 0px auto;
+}
+
+/*.bg-grey{
+    background-color: dimgrey;
+    width:100%;
+}*/
