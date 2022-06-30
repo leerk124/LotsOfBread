@@ -1,4 +1,9 @@
 ﻿@model ProductsListViewModel
+<div class="container-fluid category-heading">
+    <h1>
+        <strong>@Model.CurrentCategory</strong>
+    </h1>
+</div>
 
     <div class="row">
     @foreach (var p in Model.Products) //for each product list in the ProductListViewModel
