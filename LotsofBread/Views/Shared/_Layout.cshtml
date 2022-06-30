@@ -21,48 +21,48 @@
 
 <body>
     <!--Navigation Bar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.html"><img src="\images\lobLogo9.png" alt="logo" width="80" height="60"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
-
-                    </li>
-                    <!--<li class="nav-item">-->
-                        @*<a asp-action="BusinessInfo" asp-controller="home">Business Information</a>*@
-                    <!--</li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="signin.html">Sign in</a>
-                    </li>-->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                            Products
-                        </a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img src="\images\lobLogo9.png" alt="logo" width="80" height="60"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <!--<li class="nav-item">-->
+                @*<a asp-action="BusinessInfo" asp-controller="home">Business Information</a>*@
+                <!--</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signin.html">Sign in</a>
+                </li>-->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Products
+                    </a>
                     <!--Calling for NavigationMenu Default.cshtml (categories)-->
-                        @await Component.InvokeAsync("NavigationMenu") 
-                    </li>
+                    @await Component.InvokeAsync("NavigationMenu")
+                </li>
 
-                    <!--Calling for CartSummary Default.cshtml-->
-                    @await Component.InvokeAsync("CartSummary")
-                </ul>
+                <!--Calling for CartSummary Default.cshtml-->
+                @await Component.InvokeAsync("CartSummary")
+            </ul>
 
-                <!--Search Bar form-->
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search for bread" aria-label="Search for bread">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
+            <!--Search Bar form-->
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search for bread" aria-label="Search for bread">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
 
     <!--Top Section-->
     <div class="container-fluid">
         <img class="banner-image" src="\images\banner1.png">
     </div>
-    <!--Footer For Contacts?-->
+
+
     <!--JS for Bootstrap (Make JS folder in root??)-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -71,5 +71,17 @@
     <div class="container-fluid" style="padding-top:20px;">
         @RenderBody()
     </div>
+
+    <!--Footer For Contacts?-->
+    <footer id="footer" class="bg-grey">
+        <div class="container text-center div-footer">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="far fa-envelope"></i>
+            <p>© Copyright 2022 LotsofBread</p>
+        </div>
+
+    </footer>
 </body>
 </html>
