@@ -1,4 +1,5 @@
-﻿.banner-image {
+﻿/*_Layout.cshtml*/
+.banner-image {
     padding-top:30px;
     width: 100%;
     display: block;
@@ -18,7 +19,7 @@
     color: #565656;
 }
 
-
+/*Home*/
 .home-heading {
     padding-left:80px;
     padding-right:80px;
@@ -26,19 +27,18 @@
     color: #565656;
 }
 
-
-.home-images{
-    display:inline-block;
-    margin: auto auto;
+#home-icons {
+    padding-top:25px;
+    padding-bottom:15px;
+    color: #565656;
 }
-
 
 /*Footer*/
 .div-footer {
     margin: 0px auto;
 }
 
-/*.bg-grey{
+bg-grey{
+/*    position: absolute;*/
     background-color: dimgrey;
-    width:100%;
-}*/
+}
