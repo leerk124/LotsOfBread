@@ -1,4 +1,4 @@
-﻿/*_Layout.cshtml*/
+﻿/*MAIN LAYOUT*/
 .banner-image {
     padding-top:30px;
     width: 100%;
@@ -6,7 +6,8 @@
     opacity: 0.8;
 }
 
-/*Get rid padding that comes w/ container-fluid*/
+
+/*To remove ugly horizontal scroll bar...*/
 .container-fluid {
     padding-right: 15px;
     padding-left: 15px;
@@ -14,12 +15,25 @@
     margin-left: auto;
 }
 
+/*MESSING W/ TEXT BLOCKS*/
+.shorten {
+    margin: auto;
+    width: 30%;
+}
+
+.shorten-left {
+    margin: auto;
+    width: 30%;
+    text-align: left;
+}
+
+/*CATEGORY*/
 .category-heading {
     text-align: center;
     color: #565656;
 }
 
-/*Home*/
+/*HOME*/
 .home-heading {
     padding-left:80px;
     padding-right:80px;
@@ -33,12 +47,13 @@
     color: #565656;
 }
 
-/*Footer*/
+
+/*FOOTER*/
 .div-footer {
     margin: 0px auto;
 }
 
-bg-grey{
-/*    position: absolute;*/
-    background-color: dimgrey;
+.bg-grey{
+    background-color: #666666;
+    opacity:0.7;
 }

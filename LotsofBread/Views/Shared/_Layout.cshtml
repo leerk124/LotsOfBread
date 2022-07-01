@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -31,18 +30,18 @@
                 <li class="nav-item">
                     <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-controller="Home" asp-action="Info">Information</a>
+                @*<li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="Info">Info</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" asp-controller="Home" asp-action="News">News</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" asp-controller="Home" asp-action="Policies">Policies</a>
+                    <a class="nav-link" asp-controller="Home" asp-action="Policies">Policy</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" asp-controller="Home" asp-action="Faq">FAQ</a>
-                </li>
+                </li>*@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Products
@@ -81,14 +80,25 @@
 
     <!--Footer For Contacts?-->
     <footer id="footer" class="bg-grey">
-        <div class="container text-center div-footer">
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="far fa-envelope"></i>
-            <p>© Copyright 2022 LotsofBread</p>
+        <div class="container div-footer text-center">
+            <div class="row">
+                <div class="col-lg-1">
+                    <a class="nav-link" style="color:white;" asp-controller="Home" asp-action="Info">Info</a>
+                </div>
+                <div class="col-lg-1">
+                    <a class="nav-link" style="color:white;" asp-controller="Home" asp-action="News">News</a>
+                </div>
+                <div class="col-lg-1">
+                    <a class="nav-link" style="color:white;" asp-controller="Home" asp-action="Policies">Policy</a>
+                </div>
+                <div class="col-lg-1">
+                    <a class="nav-link" style="color:white;" asp-controller="Home" asp-action="Faq">FAQ</a>
+                    </div>
+                </div>
+
+                <p style="color:white;">© Copyright 2022 LotsofBread</p>
         </div>
 
-    </footer>
+</footer>
 </body>
 </html>
