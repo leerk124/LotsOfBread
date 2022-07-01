@@ -13,5 +13,25 @@ namespace LotsofBread.Controllers
         {
             return View("HomePage");
         }
+
+        public ViewResult Info()
+        {
+            return View("BusinessInfo");
+        }
+
+        public ViewResult Policies()
+        {
+            return View("BusinessPolicies");
+        }
+
+        public ViewResult News()
+        {
+            return View("NewsReleases");
+        }
+
+        public ViewResult Faq()
+        {
+            return View("Faq");
+        }
     }
 }
