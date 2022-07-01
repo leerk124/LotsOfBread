@@ -36,6 +36,21 @@ namespace LotsofBread.Models
         [Required(ErrorMessage = "Please enter a country name")]
         public string Country { get; set; }
 
+
+
+        //CREDITCARD
+        public string NameOnCard { get; set; }
+        public string CardNumber { get; set; }
+        public string CVV { get; set; }
+        public string ExpMonth { get; set; }
+        public string ExpYear { get; set; }
+
+
+
+
+
+
         public bool GiftWrap { get; set; }
+
     }
 }

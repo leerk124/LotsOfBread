@@ -13,6 +13,7 @@
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+
 }
 
 /*MESSING W/ TEXT BLOCKS*/
@@ -25,6 +26,11 @@
     margin: auto;
     width: 30%;
     text-align: left;
+}
+
+.shrink{
+    /*margin:auto;*/
+    width:10%;
 }
 
 /*CATEGORY*/
