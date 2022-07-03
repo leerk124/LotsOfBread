@@ -38,7 +38,7 @@
                 <label>Country:</label><input asp-for="Country" class="form-control" />
             </div>
 
-
+            <!--CREDIT INFO-->
             <br />
             <h5 style="color: #565656;">Payment.</h5>
             <div class="form-group">
@@ -53,7 +53,7 @@
 
             <div class="form-group shrink">
                 <label for="month">Month</label>
-                <select class="form-control" id="month" asp-for="ExpMonth">
+                <select class="form-control" id="month" asp-for="ExpMonth" required>
                     <option>Jan</option>
                     <option>Feb</option>
                     <option>Mar</option>
@@ -71,7 +71,7 @@
 
             <div class="form-group shrink">
                 <label for="year">Year</label>
-                <select class="form-control" id="year" asp-for="ExpYear">
+                <select class="form-control" id="year" asp-for="ExpYear" required>
                     <option>22</option>
                     <option>23</option>
                     <option>24</option>

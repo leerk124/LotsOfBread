@@ -10,15 +10,18 @@
     <table class="table table-bordered table-striped">
         <tr>
             <th>Name</th>
+            <th>Address</th>
             <th>Zip</th>
-            <th colspan="2">Details</th>
-            <th></th>
+            <th>Card Number</th>
+            <th colspan="4">Details</th>
         </tr>
         @foreach (Order o in Model)
         {
             <tr>
                 <td>@o.Name</td>
+                <td>@o.Line1</td>
                 <td>@o.Zip</td>
+                <td>@o.CardNumber</td>
                 <th>Product</th>
                 <th>Quantity</th>
                 <td>
@@ -34,7 +37,7 @@
             @foreach (CartLine line in o.Lines)
             {
                 <tr>
-                    <td colspan="2"></td>
+                    <td colspan="4"></td>
                     <td>@line.Product.Name</td>
                     <td>@line.Quantity</td>
                     <td></td>
