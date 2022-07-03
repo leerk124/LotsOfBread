@@ -78,11 +78,17 @@ namespace LotsofBread
                     defaults: new { controller = "Product", action = "List", page = 1 }
                 );
 
+                routes.MapRoute(
+                name: null,
+                template: "Product/Index",
+                defaults: new { controller = "Product", action = "List", page = 1 });
+
                 //connect to homepage
                 routes.MapRoute(
                 name: null,
                 template: "",
                 defaults: new { controller = "Home", action = "Index"});
+
 
                 routes.MapRoute(
                 name: null,

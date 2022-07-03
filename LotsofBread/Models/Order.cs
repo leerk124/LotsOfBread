@@ -39,10 +39,17 @@ namespace LotsofBread.Models
 
 
         //CREDITCARD
+        [Required(ErrorMessage = "Please enter your name on card")]
         public string NameOnCard { get; set; }
+
+        [Required(ErrorMessage = "Please enter your card number")]
         public string CardNumber { get; set; }
+
+        [Required(ErrorMessage = "Please enter your CVV")]
         public string CVV { get; set; }
+
         public string ExpMonth { get; set; }
+
         public string ExpYear { get; set; }
 
 

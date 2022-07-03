@@ -62,13 +62,8 @@
     position: relative; /*move from original position*/
     font-size:medium;
     width:100%;
-    /*text-align:center;*/
 }
 
-/*
-.div-footer {
-    margin: 0px auto;
-}*/
 
 .bg-grey{
     background-color: #666666;

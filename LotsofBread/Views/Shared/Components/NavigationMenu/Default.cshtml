@@ -1,12 +1,13 @@
 ﻿@model IEnumerable<string>
 
+@*This needs to route to localhost/Page1*@
 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    @*<a class="dropdown-item
+    <a class="dropdown-item
        asp-action="List"
        asp-controller="Product"
        asp-route-category="">
         All
-    </a>*@
+    </a>
     @foreach (string category in Model)
     {
         <a class="dropdown-item
