@@ -58,6 +58,7 @@ namespace LotsofBread
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseAuthentication();
+            app.UseAuthorization();
             app.UseSession();
 
             app.UseMvc(routes => {

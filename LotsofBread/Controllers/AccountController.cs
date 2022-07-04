@@ -8,17 +8,21 @@ using LotsofBread.Models;
 
 namespace LotsofBread.Controllers
 {
-    [Authorize]
+    // [Authorize]
     public class AccountController : Controller
     {
         private UserManager<AppUser> userManager;
         private SignInManager<AppUser> signInManager;
 
-        public AccountController(UserManager<AppUser> userMgr,
-        SignInManager<AppUser> signInMgr)
+        public AccountController(UserManager<AppUser> userMgr, SignInManager<AppUser> signInMgr)
         {
             userManager = userMgr;
             signInManager = signInMgr;
+        }
+
+        [Authorize]
+        public IActionResult AccountPage() {
+            return View("View");
         }
 
 
@@ -31,12 +35,12 @@ namespace LotsofBread.Controllers
             });
         }
 
-
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginModel loginModel)
         {
+            System.Console.WriteLine("ADNLKJSANDL");
             if (ModelState.IsValid)
             {
                 AppUser user = await userManager.FindByEmailAsync(loginModel.Email);
@@ -46,6 +50,10 @@ namespace LotsofBread.Controllers
                     if ((await signInManager.PasswordSignInAsync(user,
                         loginModel.Password, false, false)).Succeeded)
                     {
+                        return Redirect(loginModel?.ReturnUrl ?? "AccountView");
+                    }
+                    else
+                    {
                         return Redirect(loginModel?.ReturnUrl ?? "/Admin/Index");
                     }
                 }
@@ -54,6 +62,7 @@ namespace LotsofBread.Controllers
             return View(loginModel);
         }
 
+
         public async Task<RedirectResult> Logout(string returnUrl = "/")
         {
             await signInManager.SignOutAsync();
@@ -61,7 +70,7 @@ namespace LotsofBread.Controllers
         }
 
 
-        // GET: /<controller>/  
+        // GET: /<controller>/
         [AllowAnonymous]
         public ViewResult Index()
         {
@@ -74,7 +83,7 @@ namespace LotsofBread.Controllers
             return View();
         }
 
-        //POST: Account/Create 
+        //POST: Account/Create
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
