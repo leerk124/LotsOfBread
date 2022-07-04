@@ -39,6 +39,8 @@ namespace LotsofBread.Controllers
         }
 
         public ViewResult Checkout() => View(new Order());
+
+        [Authorize]
         [HttpPost]
         public IActionResult Checkout(Order order)
         {
