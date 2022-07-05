@@ -77,13 +77,15 @@ namespace LotsofBread.Controllers
             return View(userManager.Users);
         }
 
+
+
         [AllowAnonymous]
         public ViewResult Create()
         {
             return View();
         }
 
-        //POST: Account/Create
+        //POST: Account/Create 
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -102,7 +104,11 @@ namespace LotsofBread.Controllers
                 if (result.Succeeded)
                 {
                     //await signInManager.SignInAsync(user, isPersistent: false); 
-                    return RedirectToAction("Index");
+                    //return RedirectToAction("Index");
+                    return RedirectToAction("Checkout", "Order"); //After creating account, go back to login page & enter your credentials.
+                                                                  //Once done, redirect to checkout page
+
+
                 }
                 else
                 {
@@ -115,8 +121,7 @@ namespace LotsofBread.Controllers
             return View(model);
         }
 
-        private void AddErrors(IdentityResult result)
-        {
+        private void AddErrors(IdentityResult result) {
             foreach (IdentityError error in result.Errors)
             {
                 ModelState.TryAddModelError("", error.Description);
@@ -160,6 +165,84 @@ namespace LotsofBread.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+        ////POST: Account/Create
+        //[HttpPost]
+        //[AllowAnonymous]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create(LoginModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        AppUser user = new AppUser
+        //        {
+        //            UserName = model.UserName,
+        //            Email = model.Email
+        //        };
+
+        //        IdentityResult result = await userManager.CreateAsync(user, model.Password);
+
+        //        if (result.Succeeded)
+        //        {
+        //            //await signInManager.SignInAsync(user, isPersistent: false); 
+        //            return RedirectToAction("Index");
+        //        }
+        //        else
+        //        {
+        //            foreach (IdentityError error in result.Errors)
+        //            {
+        //                ModelState.AddModelError("", error.Description);
+        //            }
+        //        }
+        //    }
+        //    return View(model);
+        //}
+
+        //private void AddErrors(IdentityResult result)
+        //{
+        //    foreach (IdentityError error in result.Errors)
+        //    {
+        //        ModelState.TryAddModelError("", error.Description);
+        //    }
+        //}
+
+        //public async Task<IActionResult> Delete(string id)
+        //{
+        //    AppUser user = await userManager.FindByIdAsync(id);
+
+        //    if (user != null)
+        //    {
+        //        IdentityResult result = await userManager.DeleteAsync(user);
+        //        if (result.Succeeded)
+        //        {
+        //            return RedirectToAction("Index");
+        //        }
+        //        else
+        //        {
+        //            AddErrors(result);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        ModelState.AddModelError("", "User Not Found");
+        //    }
+
+        //    return View("Index", userManager.Users);
+        //}
+
+        //public async Task<IActionResult> Edit(string id)
+        //{
+        //    AppUser user = await userManager.FindByIdAsync(id);
+
+        //    if (user != null)
+        //    {
+        //        return View(user);
+        //    }
+        //    else
+        //    {
+        //        return RedirectToAction("Index");
+        //    }
+        //}
     }
 
 }
