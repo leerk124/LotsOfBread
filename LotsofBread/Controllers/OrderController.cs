@@ -63,7 +63,8 @@ namespace LotsofBread.Controllers
         public ViewResult Completed()
         {
             cart.Clear();
-            return View();
+            return View(repository.Orders);
+
         }
     }
 }
