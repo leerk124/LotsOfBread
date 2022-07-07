@@ -98,6 +98,7 @@ namespace LotsofBread.Controllers
             // {
             //     order.Lines = cart.Lines.ToArray();
                 // return RedirectToAction(nameof(Completed));
+                repository.SaveOrder(order);
                 return View("Completed", order);
             // }
             // else
