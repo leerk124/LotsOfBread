@@ -47,7 +47,8 @@
 
         <div class="text-center" style="margin-bottom:20px;">
             <a class="btn btn-primary" href="@Model.ReturnUrl">Continue Shopping</a>
-            <a class="btn btn-primary" asp-action="Checkout" asp-controller="Order">
+            @* <a class="btn btn-primary" asp-controller="">Continue Shopping</a> *@
+            <a class="btn btn-primary" asp-action="CheckoutForm" asp-controller="Order">
                 Checkout
             </a>
         </div>

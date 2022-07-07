@@ -39,26 +39,71 @@ namespace LotsofBread.Controllers
         }
 
         [Authorize]
-        public ViewResult Checkout() => View(new Order());
-
-        [Authorize]
-        [HttpPost]
-        public IActionResult Checkout(Order order)
-        {
+        public IActionResult CheckoutForm() {
             if (cart.Lines.Count() == 0)
             {
                 ModelState.AddModelError("", "Sorry, your cart is empty!");
             }
+            // if (ModelState.IsValid) {
+                System.Console.WriteLine($"Checkout 1");
+                return View("Checkout", new Order());
+            // }
+            // System.Console.WriteLine($"Redirect Back");
+            // return Page();//RedirectToAction("Index", "Cart");//View("Cart");
+        }
+
+        [Authorize]
+        public IActionResult Confirmation(Order order) {
+            // foreach (var a in order.Lines) {
+            //     System.Console.WriteLine(a);
+            // }
+            // System.Console.WriteLine("BALLS");
+            // return View();//View("Confirmation", order);
+            
+            System.Console.WriteLine($"Confirmation");
             if (ModelState.IsValid)
             {
                 order.Lines = cart.Lines.ToArray();
-                repository.SaveOrder(order);
-                return RedirectToAction(nameof(Completed));
+                // repository.SaveOrder(order);
+                return View("Confirmation", order);
             }
             else
             {
                 return View(order);
             }
+        }
+
+        // [Authorize]
+        // public ViewResult CheckoutFinal() {
+        //     if (cart.Lines.Count() == 0)
+        //     {
+        //         ModelState.AddModelError("", "Sorry, your cart is empty!");
+        //     }
+        //     if (ModelState.IsValid)
+        //     {
+        //         return View(new Order());
+        //     }
+        //     else
+        //     {
+        //         return View(order);
+        //     }
+        // }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult CheckoutFinal(Order order)
+        {
+            System.Console.WriteLine($"Checkout 2");
+            // if (ModelState.IsValid)
+            // {
+            //     order.Lines = cart.Lines.ToArray();
+                // return RedirectToAction(nameof(Completed));
+                return View("Completed", order);
+            // }
+            // else
+            // {
+            //     return View(order);
+            // }
         }
         public ViewResult Completed()
         {
