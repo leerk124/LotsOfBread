@@ -1,6 +1,51 @@
-﻿<div class="container-fluid text-center">
+﻿@* @model IEnumerable<Order> *@
+
+<div class="container-fluid text-center">
     <h2 style="color: #565656;">Thanks!</h2>
     <p>Thanks for placing your order.</p>
     <p>We'll ship your goods as soon as possible.</p>
 </div>
 
+<!--THIS WILL DISPLAY ALL ORDER IDs IN DB-->
+@*<table id="orderTable">
+            @foreach (Order o in Model)
+            {
+                <tr>
+                    <td>@o.OrderID</td>
+                </tr>
+            }
+    </table>*@
+
+
+@* <table class="table table-bordered table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Zip</th>
+        <th>Card Number</th>
+        <th colspan="4">Details</th>
+    </tr>
+
+    @foreach (Order o in Model)
+    {
+        <tr>
+            <td>@o.Name</td>
+            <td>@o.Line1</td>
+            <td>@o.Zip</td>
+            <td>@o.CardNumber</td>
+            <th>Product</th>
+            <th>Quantity</th>
+        </tr>
+
+        @foreach (CartLine line in o.Lines)
+        {
+            <tr>
+                <td colspan="4"></td>
+                <td>@line.Product.Name</td>
+                <td>@line.Quantity</td>
+                <td></td>
+            </tr>
+
+        }
+    }
+</table> *@

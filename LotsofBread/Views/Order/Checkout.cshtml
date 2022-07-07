@@ -9,7 +9,8 @@
 
         <div asp-validation-summary="All" class="text-danger"></div>
 
-        <form asp-action="Checkout" method="post">
+        @* <form asp-controller="Order" asp-action="CheckoutFinal" method="post"> *@
+        <form asp-controller="Order" asp-action="Confirmation" method="post">
             <h5 style="color: #565656;">Ship to.</h5>
             <div class="form-group">
                 <label>Name:</label><input asp-for="Name" class="form-control" />
@@ -91,4 +92,4 @@
                 <input class="btn btn-primary" type="submit" value="Complete Order" />
             </div>
         </form>
-    </div> 
+    </div>
